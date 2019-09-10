@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=CoolPattern
+comment1.params=
+comment1.target=void\ main()
+comment2.params=turnRadius\ sideLength
+comment2.target=void\ circle(int,\ int)
+comment3.params=
+comment3.target=java.awt.Color\ randomColor()
+numComments=4
