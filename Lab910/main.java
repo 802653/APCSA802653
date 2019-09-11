@@ -19,11 +19,12 @@ public class main
         int nums[];
         nums = new int[100];    
         nums = loadArray(nums);
-        printArray(nums);
+        //printArray(nums);
         System.out.println("   ");
-        System.out.println(getSum(nums));
-        System.out.println(getMean(nums));
-        System.out.println(getMedian(nums));
+        System.out.println("Sum:" + getSum(nums));
+        System.out.println("Mean:" + getMean(nums));
+        System.out.println("Median:" + getMedian(nums));
+        System.out.println("Mode:" + getMode(nums));
         
     }
     public static int[] loadArray(int[] x)
@@ -38,7 +39,7 @@ public class main
     {
         for (int i = 0; i < x.length; i++)
         {
-            System.out.println(x[i]);
+            System.out.println(x[i] + " ");
         }
     }
     public static int getSum(int[] x)
@@ -64,6 +65,32 @@ public class main
         {
             return x[x.length/2];
         }
+    }
+    public static int getMode(int[] x)
+    {
+        int counts[];
+        counts = new int[11];
+        for (int i = 0; i < x.length; i ++ )
+        {
+            counts[x[i]] += 1;
+        }
+        int max = counts[0];        
+        for (int i = 1; i < counts.length; i++) 
+        {
+            if (max < counts[i]) {
+                max = counts[i];
+            }
+        }
+        for (int i = 0; i < counts.length; i++) 
+        {
+            if (counts[i] == max) {
+                printArray(counts);
+                return i+1; 
+            }
+            
+        }
+        printArray(counts);
+        return 1;
     }
     
 }
