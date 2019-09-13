@@ -14,12 +14,30 @@ public class DigitArray
         
     }
 
-    public void loadArray(int[] digits,int num)
+    public void loadArray(int num)
     {
-        private int digitCount = (int)(
+        int length = lengthOfInteger(num);
+        int r = 10;
+        digits =  new int[length];
+        for (int i = 0; i<digits.length; i++) {
+            digits[digits.length-i-1] = num % (r);
+            num = (int)(num/10);
+        }
+        
     }
-    public int[] getDigits(int[] digits)
+    public int lengthOfInteger(int num) 
     {
-
+        int length = 0;
+        int x = 1;
+        while ( x < num ) 
+        {
+            length++;
+            x=x*10;
+        }        
+        return length;
+    }
+    public int[] getDigits()
+    {
+        return digits;
     }
 }
