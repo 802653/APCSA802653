@@ -20,7 +20,7 @@ public class ScannerTest{
             if(!fullName.equals("quit")){
                 Person person = new Person(fullName);
                 person.intialize();
-                System.out.println("first name: " + person.fName + " middle name: " + person.mName + " last name: " + person.lName);
+                System.out.println("first name: " + person.fName + "\rmiddle name: " + person.mName + "\rlast name: " + person.lName);
             }
         }
     }

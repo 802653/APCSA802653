@@ -2,8 +2,8 @@
 /**
  * Write a description of class Person here.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author (pBlankenberg)
+ * @version (92419)
  */
 public class Person
 {
@@ -20,40 +20,53 @@ public class Person
         fullName = fuName;
     }
 
-    public void intialize()
+    public void intialize() //will break if you add an extra space at end, so dont do that :)
     {
-        if(fullName.indexOf(",") > 0) { 
+        String tempFullName = fullName;
+        if(fullName.indexOf(",") < 0) { 
             int divider; 
-            int divider2;
-            int divider3;
             
-            divider = fullName.indexOf(" ");
+            divider = tempFullName.indexOf(" ");
             
-            divider2 = fullName.indexOf(" ",1);
+            fName = tempFullName.substring(0,divider); 
             
+            tempFullName = tempFullName.substring(divider+1);
             
-            fName = fullName.substring(0,divider); 
+            divider = tempFullName.indexOf(" ");
             
-            mName = fullName.substring(divider,divider2);
+            if(tempFullName.indexOf(" ") < 0) {
             
-            lName = fullName.substring(divider2);
-            
+                lName = tempFullName;
+                mName = "";
+            } 
+            else {
+                mName = tempFullName.substring(0,divider);
+
+                lName = tempFullName.substring(divider);
+            }
+
         }
         else {
             int divider; 
-            int divider2;
+            int divider2; 
             
-            divider = fullName.indexOf(",");
-            
-            fName = fullName.substring(0,divider);
-            
-            mName = "none";
-            
-            lName = fullName.substring(divider);
+            divider = fullName.indexOf(", ");
+            divider2 = fullName.indexOf(" ");
             
             
+            lName = fullName.substring(0,divider);
             
+            tempFullName = fullName.substring(divider+2);
             
+            if(tempFullName.indexOf(" ") < 0) {
+            
+                fName = tempFullName;
+                mName = "";
+            } 
+            else {
+                fName = tempFullName.substring(0,divider2);
+                mName = tempFullName.substring(divider2);
+            }
         }
     }
 }
