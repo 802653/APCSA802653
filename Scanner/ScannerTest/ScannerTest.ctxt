@@ -1,5 +1,9 @@
 #BlueJ class context
 comment0.target=ScannerTest
 comment1.params=
-comment1.target=void\ main()
-numComments=2
+comment1.target=void\ printNames()
+comment2.params=p\ e
+comment2.target=Person[]\ extendList(Person[],\ Person)
+comment3.params=
+comment3.target=void\ main()
+numComments=4
