@@ -47,6 +47,55 @@ public class Magpie3
 		{
 			response = "Tell me more about your family.";
 		}
+		else if (findKeyword(statement, "cat") >= 0
+				|| findKeyword(statement, "dog") >= 0
+				|| findKeyword(statement, "mouse") >= 0
+				|| findKeyword(statement, "bird") >= 0)
+		{
+			response = "Tell me more about your pet.";
+		}
+
+                else if (findKeyword(statement, "democracy") >= 0
+                        || findKeyword(statement, "election") >= 0
+                        || findKeyword(statement, "president") >= 0
+                        || findKeyword(statement, "democratic") >= 0)
+                {
+                    response = "Democracy is a dream. Hope is lost.";
+                }
+                else if (findKeyword(statement, "tv") >= 0
+                        || findKeyword(statement, "television") >= 0
+                        || findKeyword(statement, "netflix") >= 0
+                        || findKeyword(statement, "hulu") >= 0)
+                {
+                    response = "I like watching shows, speaking of which what is your favorte show?";
+                }
+                else if (findKeyword(statement, "1987") >= 0
+                        || findKeyword(statement, "1945") >= 0
+                        || findKeyword(statement, "2008") >= 0
+                        || findKeyword(statement, "2001") >= 0)
+                {
+                    response = "Nothing happened that year.";
+                }
+                else if (findKeyword(statement, "1989") >= 0
+                        || findKeyword(statement, "Tienemen") >= 0
+                        || findKeyword(statement, "massacre") >= 0
+                        || findKeyword(statement, "protests") >= 0)
+                {
+                    response = "Report to the nearest station.";
+                }
+                else if (findKeyword(statement,"football") >= 0
+                        || findKeyword(statement,"soccer") >= 0
+                        || findKeyword(statement,"basketball") >= 0)
+                {
+                    response = "Speaking of which, are you going to the game this tommorow?";
+                }
+                else if (findKeyword(statement,"Etlin") >= 0
+                        || findKeyword(statement,"Eaton") >= 0
+                        || findKeyword(statement,"Gelb") >= 0
+                        || findKeyword(statement,"Coughlin") >= 0)
+                {
+                    response = "Sounds like a good teacher.";
+                }
 		else
 		{
 			response = getRandomResponse();
