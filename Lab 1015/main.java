@@ -1,14 +1,15 @@
 
 /**
- * Write a description of class main here.
+ * Crunches data of an Arraylist of Integers. Modified version of lab 910, but with a working mode and made with ArrayList
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author (pBlankenberg)
+ * @version (10/15/19)
  */
 import java.lang.Math;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Arrays;
+import java.util.Scanner;
 public class main
 {
     // instance variables - replace the example below with your own
@@ -18,7 +19,27 @@ public class main
     }
     public static void run() 
     {
-        ArrayList nums = new ArrayList<Integer>();   
+        
+        /* ArrayList nums = new ArrayList<Integer>();   
+        
+	Scanner in = new Scanner (System.in);
+	System.out.println("Welcome, input a set of integers. When you want to crunch the numbers, type return");
+	String statement = in.nextLine();
+	
+	
+	while (!statement.equals("return"))
+	{
+	        nums.add(statement);
+		statement = in.nextLine();
+	*/
+        ArrayList nums = new ArrayList<Integer>();
+        nums.add(5);
+        nums.add(33);
+        nums.add(70);
+        nums.add(55);
+        nums.add(45);
+        nums.add(25);
+        nums.add(25);
         
         //printArray(nums);
         System.out.println("   ");
@@ -46,10 +67,10 @@ public class main
     public static int getSum(ArrayList<Integer> x)
     {
         int sum;
-        sum = 0 ;
+        sum = 0;
         for (int i = 0; i < x.size(); i ++ )
         {
-            sum += x.get(i);
+            sum += x.get(i).intValue();
         }
         return sum;
     }
@@ -60,38 +81,30 @@ public class main
         Collections.sort(x);
         if (getSum(x) % 2 == 0)
         {
-            return (x[(int)(x.size()/2)] + x[(int)(x.size()/2)+1])/2;
+            return (x.get((int)(x.size()/2)) + x.get((int)((x.size()-1)/2)))/2;
         }
         else
         {
-            return x[x.size()/2];
+            return x.get(x.size()/2);
         }
     }
     public static int getMode(ArrayList<Integer> x)
     {
-        int counts[];
-        counts = new int[11];
-        for (int i = 0; i < x.size(); i ++ )
+        int max = 0;
+        int index = 0;
+        for (int i = 0; i < x.size(); i++ )
         {
-            counts[x[i]] += 1;
-        }
-        int max = counts[0];        
-        for (int i = 1; i < counts.length(); i++) 
-        {
-            if (max < counts[i]) {
-                max = counts[i];
+            int count = 0;
+            
+            for (int r = 0; r < x.size(); r++) {
+                if (x.get(r) == x.get(i)) count++;
             }
-        }
-        for (int i = 0; i < counts.length(); i++) 
-        {
-            if (counts[i] == max) {
-                printArray(counts);
-                return i+1; 
-            }
+            System.out.println(count + "   " + max + "  " + index);
+            if (count > max) index = i;
+            if (count > max) max = count;
             
         }
-        printArray(counts);
-        return 1;
+        return x.get(index);
     }
     
 }
