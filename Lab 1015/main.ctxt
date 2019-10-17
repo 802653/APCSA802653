@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.target=main
+comment1.params=
+comment1.target=main()
+comment2.params=
+comment2.target=void\ run()
+comment3.params=x
+comment3.target=java.util.ArrayList\ loadArray(java.util.ArrayList)
+comment4.params=x
+comment4.target=void\ printArray(java.util.ArrayList)
+comment5.params=x
+comment5.target=int\ getSum(java.util.ArrayList)
+comment6.params=x
+comment6.target=double\ getMean(java.util.ArrayList)
+comment7.params=x
+comment7.target=double\ getMedian(java.util.ArrayList)
+comment8.params=x
+comment8.target=int\ getMode(java.util.ArrayList)
+numComments=9
