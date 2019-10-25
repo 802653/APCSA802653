@@ -9,13 +9,13 @@
 import java.util.*;
 import java.util.concurrent.TimeUnit;
 
-public class BubbleSort
+public class times
 {
 
     /**
      * Constructor for objects of class BubbleSort
      */
-    public BubbleSort()
+    public times()
     {
         // initialise instance variables
 
@@ -23,7 +23,7 @@ public class BubbleSort
 
     public static void main() {
         
-        int[] list = new int[15000];
+        /*int[] list = new int[15000];
         
         list = generateList(list.length);
         
@@ -41,45 +41,57 @@ public class BubbleSort
         
         printList(selectionSort(list));
         
-        System.out.println("\n\n\n\n ");
+        */System.out.println("\n\n\n\n ");
         
-        int[] bubbleSortTimes = new int[35];
+        long[] bubbleSortTimes = new long[35];
         
-        int[] selectionSortTimes = new int[35];
+        long[] selectionSortTimes = new long[35];
         
-        int[] insertSortTimes = new int[35];
+        long[] insertionSortTimes = new long[35];
         
-        for(int i = 10; i < 35000; i += 1000) {
+        for(int i = 1000; i < 10; i +=30) {
             
-            int[] oldList = new int[i];
+            int[] oldList = new int[i*10];
+            
+            int[] list = new int[i*10];
             
             oldList = generateList(oldList.length);
             
             list = oldList;
             
-            bubbleSort(list);
+            bubbleSortTimes[i] = bubbleSort(list);
             
             list = oldList;
             
-            selectionSort(list);
+            selectionSortTimes[i] = selectionSort(list);
             
             list = oldList;
             
-            insertionSort(list);
-            
-            
+            insertionSortTimes[i] = insertionSort(list);
+           
+            System.out.println("calculating" + i*10);
         }
-    }
-    public static void printList(int[] list) {
         
-        /*for(int i = 0; i < list.length; i++) {
+        System.out.println("bubble times:");
+        printList(bubbleSortTimes);
+            
+        System.out.println("selection times:");
+        printList(selectionSortTimes);
+            
+        System.out.println("insertion times:");
+        printList(insertionSortTimes);
+        
+        
+    }
+    public static void printList(long[] list) {
+        for(int i = 0; i < list.length; i++) {
             
             System.out.print(list[i]+" ,");
             if(i%50 == 0) {
                 System.out.println(" ");
             }
             
-        }*/
+        }
         
     }
     public static int[] generateList(int n) {
@@ -103,7 +115,7 @@ public class BubbleSort
         return list;
     }
        
-    public static int[] bubbleSort(int[] list) {
+    public static long bubbleSort(int[] list) {
         long startTime = System.nanoTime(); 
         
        
@@ -126,12 +138,11 @@ public class BubbleSort
         }
         long endTime = System.nanoTime();
         long durationInNano = (endTime - startTime);
-        System.out.println("Bubble Sort: comparisons:" + comparisons + " swaps:" + swaps + " elapsed: " + TimeUnit.NANOSECONDS.toMillis(durationInNano));
-        return list;
+        return(TimeUnit.NANOSECONDS.toMillis(durationInNano));
         
     }
     
-    public static int[] insertionSort(int[] list) {
+    public static long insertionSort(int[] list) {
         long startTime = System.nanoTime(); 
         int comparisons = 0;
         int swaps = 0;
@@ -150,12 +161,11 @@ public class BubbleSort
         
         long endTime = System.nanoTime();
         long durationInNano = (endTime - startTime);
-        System.out.println("Insertion Sort: comparisons:" + comparisons + " swaps:" + swaps + " elapsed: " + TimeUnit.NANOSECONDS.toMillis(durationInNano));
-        return list;
+        return(TimeUnit.NANOSECONDS.toMillis(durationInNano));
         
     }
     
-    public static int[] selectionSort(int[] list) {
+    public static long selectionSort(int[] list) {
         long startTime = System.nanoTime(); 
         int comparisons = 0;
         int swaps = 0;
@@ -172,7 +182,6 @@ public class BubbleSort
         
         long endTime = System.nanoTime();
         long durationInNano = (endTime - startTime);
-        System.out.println("Selection Sort: comparisons:" + comparisons + " swaps:" + swaps + " elapsed: " + TimeUnit.NANOSECONDS.toMillis(durationInNano));
-        return list;
+        return(TimeUnit.NANOSECONDS.toMillis(durationInNano));
     }
 }
