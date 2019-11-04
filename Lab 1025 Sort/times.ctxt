@@ -1,0 +1,20 @@
+#BlueJ class context
+comment0.target=times
+comment1.params=
+comment1.target=times()
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ BubbleSort\r\n
+comment2.params=
+comment2.target=void\ main()
+comment3.params=list
+comment3.target=void\ printList(long[])
+comment4.params=n
+comment4.target=int[]\ generateList(int)
+comment5.params=list\ i\ j
+comment5.target=int[]\ swap(int[],\ int,\ int)
+comment6.params=list
+comment6.target=long\ bubbleSort(int[])
+comment7.params=list
+comment7.target=long\ insertionSort(int[])
+comment8.params=list
+comment8.target=long\ selectionSort(int[])
+numComments=9
