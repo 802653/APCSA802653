@@ -1,7 +1,13 @@
 #BlueJ package file
+dependency1.from=StudentListRunner
+dependency1.to=StudentList
+dependency1.type=UsesDependency
+dependency2.from=StudentList
+dependency2.to=Student
+dependency2.type=UsesDependency
 editor.fx.0.height=1167
 editor.fx.0.width=974
-editor.fx.0.x=-7
+editor.fx.0.x=953
 editor.fx.0.y=0
 objectbench.height=339
 objectbench.width=934
@@ -13,7 +19,7 @@ package.editor.x=-7
 package.editor.y=0
 package.frame.height=1167
 package.frame.width=974
-package.numDependencies=0
+package.numDependencies=2
 package.numTargets=3
 package.showExtends=true
 package.showUses=true

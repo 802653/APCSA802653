@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.target=StringCheck
+comment1.params=
+comment1.target=void\ main()
+comment2.params=list\ a
+comment2.target=java.lang.String[]\ addArray(java.lang.String[],\ java.lang.String)
+comment3.params=list
+comment3.target=void\ printList(java.lang.String[])
+comment4.params=list
+comment4.target=void\ printList(java.util.ArrayList)
+comment5.params=str\ key
+comment5.target=java.util.ArrayList\ wordChecker(java.lang.String[],\ java.lang.String)
+comment6.params=str
+comment6.target=void\ print(java.lang.String)
+comment7.params=integer
+comment7.target=void\ print(int)
+comment8.params=str\ key
+comment8.target=java.lang.String[]\ wordChecker(java.util.ArrayList,\ java.lang.String)
+numComments=9
