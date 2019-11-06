@@ -73,7 +73,8 @@ public class StudentList
         for(int i = 0; i < studList.size(); i++) {
             if(studList.get(i) != null) {
                 if(studList.get(i).getLastName().equals(lastName)) {
-                    System.out.println("Student: " + studList.get(i).getFirstName() + " " + studList.get(i).getMiddleName() + " " + studList.get(i).getLastName());
+                    if(!studList.get(i).getMiddleName().equals("")) System.out.println("Student: " + studList.get(i).getFirstName() + " " + studList.get(i).getMiddleName() + " " + studList.get(i).getLastName());
+                    else System.out.println("Student: " + studList.get(i).getFirstName() + " " + studList.get(i).getLastName());
                     System.out.println("GPA: " + studList.get(i).getGPA() + " Student Number:" + studList.get(i).getStudentNumber());
                 }
             }
@@ -84,7 +85,8 @@ public class StudentList
         for(int i = 0; i < studList.size(); i++) {
             if(studList.get(i) != null) {
                 if(studList.get(i).getStudentNumber() == stuNumber) {
-                    System.out.println("Student: " + studList.get(i).getFirstName() + " " + studList.get(i).getMiddleName() + " " + studList.get(i).getLastName());
+                    if(!studList.get(i).getMiddleName().equals("")) System.out.println("Student: " + studList.get(i).getFirstName() + " " + studList.get(i).getMiddleName() + " " + studList.get(i).getLastName());
+                    else System.out.println("Student: " + studList.get(i).getFirstName() + " " + studList.get(i).getLastName());
                     System.out.println("GPA: " + studList.get(i).getGPA() + " Student Number:" + studList.get(i).getStudentNumber());
                 }
             }

@@ -23,6 +23,7 @@ public class StudentListRunner
         String name = "";
         double gpa = 0;
         int number = 0;
+        String tempVar = "";
         String output = "";
         while(!output.equals("stop")) {
             System.out.println("\nPlease Select the Following Options\n1) Add Student\n2) Delete Student\n3) Edit Student\n4) Reset List\n5) Print List\n6) Print Student\n7) Sort Students");
@@ -52,7 +53,14 @@ public class StudentListRunner
             }
             if(output.equals("6")) {
                 System.out.println("Enter the last name or student number of the student you would like to print");
-                studentList.printStudent(kb.nextLine());
+                tempVar = kb.nextLine();
+                try {
+                    studentList.printStudent(Integer.valueOf(tempVar));
+                }
+                catch(Exception e) {
+                    studentList.printStudent(tempVar);
+                    System.out.println("A1");
+                }
             }
             if(output.equals("7")) {
                 

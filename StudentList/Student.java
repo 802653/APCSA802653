@@ -20,6 +20,7 @@ public class Student
         fullName = fullname;
         stuNumber = studentNumber;
         gpa = gpaN;
+        parseMethod();
     }
 
     public void parseMethod()
@@ -29,7 +30,7 @@ public class Student
         int secondSpaceLocation = fullName.lastIndexOf(" ");
         
         if(commaLocation == -1) {
-            if(secondSpaceLocation == -1) {
+            if(secondSpaceLocation != -1) {
                 
                 fName = fullName.substring(0,firstSpaceLocation);
                 mName = "";
@@ -45,7 +46,7 @@ public class Student
             }
         }
         else {
-            if(secondSpaceLocation == -1) {
+            if(secondSpaceLocation != -1) {
                 
                 fName = fullName.substring(0,commaLocation);
                 mName = fullName.substring(commaLocation+2,secondSpaceLocation);
