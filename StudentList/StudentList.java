@@ -38,20 +38,18 @@ public class StudentList
         }
         
     //PUBLIC VOID EDITSTUDENTLIST
-        public void editStudentList(String lastName, int GPA, int newStudentNumber) {
+        public void editStudentList(int studentNumber, int newStudentNumber) {
             for(int i = 0; i < studList.size(); i++) {
-                if(studList.get(i).getLastName().equals(lastName)) {
-                    studList.get(i).setGPA(GPA);
+                if(studList.get(i).getLastName().equals(studentNumber)) {
                     studList.get(i).setStudentNumber(newStudentNumber);
                 }
             }
         }
         
-        public void editStudentList(int stuNumber, int GPA, int newStudentNumber) {
+        public void editStudentList(int studentNumber, double GPA) {
             for(int i = 0; i < studList.size(); i++) {
-                if(studList.get(i).getLastName().equals(stuNumber)) {
+                if(studList.get(i).getLastName().equals(studentNumber)) {
                     studList.get(i).setGPA(GPA);
-                    studList.get(i).setStudentNumber(newStudentNumber);
                 }
             }
         }

@@ -78,7 +78,7 @@ public class Student
     public int getStudentNumber() {
         return stuNumber;
     }
-    public void setGPA(int newGPA) {
+    public void setGPA(double newGPA) {
         gpa = newGPA;
     }
     public void setStudentNumber(int newStudentNumber) {
