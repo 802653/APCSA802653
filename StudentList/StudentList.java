@@ -7,9 +7,11 @@
  */
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class StudentList
 {
+    String tempVar = "";
     public StudentList()
     {
 
@@ -38,18 +40,30 @@ public class StudentList
         }
         
     //PUBLIC VOID EDITSTUDENTLIST
-        public void editStudentList(int studentNumber, int newStudentNumber) {
+        public void editStudentList(int studentNumber) {
             for(int i = 0; i < studList.size(); i++) {
-                if(studList.get(i).getLastName().equals(studentNumber)) {
-                    studList.get(i).setStudentNumber(newStudentNumber);
+                if(studList.get(i).getStudentNumber() == studentNumber) {
+                    Scanner kb = new Scanner(System.in);
+                    System.out.print("What would you like the GPA to be? (Current gpa is "+studList.get(i).getGPA());
+                    tempVar = kb.nextLine();
+                    studList.get(i).setGPA(Double.valueOf(tempVar));
+                    System.out.print("What would you like the First Name to be? (Current gpa is "+studList.get(i).getFirstName());
+                    tempVar = kb.nextLine();
+                    studList.get(i).setFirstName(tempVar);
                 }
             }
         }
         
-        public void editStudentList(int studentNumber, double GPA) {
+        public void editStudentList(String lastName) {
             for(int i = 0; i < studList.size(); i++) {
-                if(studList.get(i).getLastName().equals(studentNumber)) {
-                    studList.get(i).setGPA(GPA);
+                if(studList.get(i).getLastName().equals(lastName)) {
+                    Scanner kb = new Scanner(System.in);
+                    System.out.print("What would you like the GPA to be? (Current gpa is "+studList.get(i).getGPA());
+                    tempVar = kb.nextLine();
+                    studList.get(i).setGPA(Double.valueOf(tempVar));
+                    System.out.print("What would you like the First Name to be? (Current gpa is "+studList.get(i).getFirstName());
+                    tempVar = kb.nextLine();
+                    studList.get(i).setFirstName(tempVar);
                 }
             }
         }
@@ -62,7 +76,7 @@ public class StudentList
     public void printList() {
         for (int i = 0; i < studList.size(); i++) {
             if(!studList.get(i).equals(null)) {
-                System.out.println(studList.get(i).getFirstName()+" "+studList.get(i).getLastName() +", "+ studList.get(i).getGPA());
+                System.out.println(studList.get(i).getFirstName()+" "+studList.get(i).getLastName() +", "+ studList.get(i).getGPA()+"," + studList.get(i).getStudentNumber());
             }
         }
     }
@@ -91,6 +105,41 @@ public class StudentList
         }
     }
     
+    public ArrayList<Student> swap(ArrayList<Student> list, int i, int j) {
+        Student temp;
+        temp = list.get(i);
+        list.set(i,list.get(j));
+        list.set(j,temp);
+        return list;
+    }
+    
+    public ArrayList<Student> sortStudents(ArrayList<Student> list, boolean method) {
+        if(method){
+            for(int i = 1; i < list.size(); i++) {
+                for(int j = i; j > 0; j--) {
+                    if(list.get(j).getStudentNumber() > list.get(j-1).getStudentNumber()) {
+                        list = swap(list,j,j-1);
+                    }  
+                }
+            
+            }
+            return list;
+        }
+        else {
+            for(int i = 1; i < list.size(); i++) {
+                for(int j = i; j > 0; j--) {
+                    if(list.get(j).getStudentNumber() > list.get(j-1).getStudentNumber()) {
+                        list = swap(list,j,j-1);
+                    }  
+                }
+            
+            }
+            return list;
+            
+        }
+    }
+
+
     /*public void SortStudents(String lastName) {
         
     }

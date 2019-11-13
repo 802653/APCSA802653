@@ -53,13 +53,11 @@ public class StudentListRunner
             if(output.equals("3")) { //edit student
                 System.out.println("Enter the last name or student number of the student you would like to edit");
                 tempVar = kb.nextLine();
-                System.out.println("Enter the new last name or new gpa of the student");
-                tempVar2 = kb.nextLine();
                 try{
-                    studentList.editStudentList(Integer.valueOf(tempVar),Integer.valueOf(tempVar2));
+                    studentList.editStudentList(Integer.valueOf(tempVar));
                 }
                 catch(Exception e) {
-                    studentList.editStudentList(Integer.valueOf(tempVar),Double.valueOf(tempVar2));
+                    studentList.editStudentList(tempVar);
                 }
 
             }
@@ -82,7 +80,7 @@ public class StudentListRunner
                 }
             }
             if(output.equals("7")) { // sort students
-                
+                studentList.studList = studentList.sortStudents(studentList.studList,true);
             }
             
         }
