@@ -23,7 +23,7 @@ public class StudentList
         String[] alphabet = {"a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"};
         int pos = 0;
         for(int i = 0; i < alphabet.length; i++) {
-            if(a.substring(1,2).equals(alphabet[i])) pos = i-1;
+            if(a.substring(0,1).toLowerCase().equals(alphabet[i])) pos = i-1;
         }
         return pos;
     }
@@ -79,6 +79,7 @@ public class StudentList
     
     public void clearList() {
         ArrayList<Student> newStudList = new ArrayList<Student>();
+        studList.add(new Student("",-1003,-1003));
         studList = newStudList;
     }
     
@@ -133,9 +134,11 @@ public class StudentList
             
             }
         }
-        if(!method) {
+        if(method == false) {
             for(int i = 1; i < list.size(); i++) {
                 for(int j = i; j > 0; j--) {
+                    System.out.println(list.get(j).getFirstName() + " " + list.get(j-1).getFirstName());
+                    System.out.println(alpha(list.get(j).getFirstName()) + " " + alpha(list.get(j-1).getFirstName()));
                     if(alpha(list.get(j).getFirstName()) > alpha(list.get(j-1).getFirstName())) {
                         list = swap(list,j,j-1);
                     }  
