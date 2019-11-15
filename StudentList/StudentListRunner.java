@@ -25,11 +25,16 @@ public class StudentListRunner
         int number = 0;
         String tempVar = "";
         String tempVar2 = "";
+        String tempVar3 = "";
         String output = "";
-        while(!output.equals("8")) {
-            System.out.println("\nPlease Select the Following Options\n1) Add Student\n2) Delete Student\n3) Edit Student\n4) Reset List\n5) Print List\n6) Print Student\n7) Sort Students\n8) Quit");
+        while(!output.equals("9")) {
+            System.out.println("\nPlease Select the Following Options\n1) Add Student\n2) Delete Student\n3) Edit Student\n4) Reset List\n5) Print List\n6) Print Student\n7) Sort Students\n8) Filter Search\n9) Quit");
             output = kb.nextLine();
-            
+            if(output.equals("debug")) {
+                System.out.println("DEBUG MODE: Enter Letter");
+                tempVar = kb.nextLine();
+                System.out.println(studentList.alpha(tempVar));
+            }
             if(output.equals("1")) {
                 System.out.println("Enter the full name of the student");
                 name = kb.nextLine();
@@ -80,12 +85,25 @@ public class StudentListRunner
                 }
             }
             if(output.equals("7")) { // sort students
-                studentList.studList = studentList.sortStudents(studentList.studList,true);
+                System.out.println("Would you like to sort by number (y) or by last name (n)?");
+                tempVar = kb.nextLine();
+                if(tempVar.equals("y")) studentList.studList = studentList.sortStudents(studentList.studList,true);
+                if(tempVar.equals("n")) studentList.studList = studentList.sortStudents(studentList.studList,false);
             }
-            
+            if(output.equals("8")) { // sort students
+                System.out.println("Would you like to sort by student number (y) or by GPA (n)?");
+                tempVar = kb.nextLine();
+                System.out.println("Min Value?");
+                tempVar2 = kb.nextLine();
+                System.out.println("Max Value?");
+                tempVar3 = kb.nextLine();
+                if(tempVar.equals("y")) System.out.println(studentList.filterSearchStudentList(Double.valueOf(tempVar2),Double.valueOf(tempVar3),false));
+                if(tempVar.equals("n")) System.out.println(studentList.filterSearchStudentList(Double.valueOf(tempVar2),Double.valueOf(tempVar3),true));
+            }
         }
         
     }
+    
     public static void clr() {
         System.out.print("\u000c");
     }

@@ -19,6 +19,15 @@ public class StudentList
 
     ArrayList<Student> studList = new ArrayList<Student>();
     
+    public int alpha(String a) {
+        String[] alphabet = {"a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"};
+        int pos = 0;
+        for(int i = 0; i < alphabet.length; i++) {
+            if(a.substring(1,2).equals(alphabet[i])) pos = i-1;
+        }
+        return pos;
+    }
+    
     public void addStudent(String fullName, double gpa, int studentNumber) {
         studList.add(new Student(fullName,gpa,studentNumber));
     }
@@ -123,20 +132,34 @@ public class StudentList
                 }
             
             }
-            return list;
         }
-        else {
+        if(!method) {
             for(int i = 1; i < list.size(); i++) {
                 for(int j = i; j > 0; j--) {
-                    if(list.get(j).getStudentNumber() > list.get(j-1).getStudentNumber()) {
+                    if(alpha(list.get(j).getFirstName()) > alpha(list.get(j-1).getFirstName())) {
                         list = swap(list,j,j-1);
                     }  
                 }
             
             }
-            return list;
             
         }
+        return list;
+    }
+    
+    public ArrayList<Student> filterSearchStudentList(double min, double max, boolean method) {
+        ArrayList<Student> tempList = new ArrayList<Student>();
+        if(method){
+            for(int i = 0; i < studList.size(); i++) {
+                if(studList.get(i).getGPA() > min && studList.get(i).getGPA() < max) tempList.add(studList.get(i));  
+            }
+        }
+        if(method == false){
+            for(int i = 0; i < studList.size(); i++) {
+                if(studList.get(i).getStudentNumber() > (int)(min) && studList.get(i).getStudentNumber() < (int)(max)) tempList.add(studList.get(i));  
+            }
+        }
+        return tempList;
     }
 
 

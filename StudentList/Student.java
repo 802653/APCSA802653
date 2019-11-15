@@ -87,13 +87,6 @@ public class Student
     public void setStudentNumber(int newStudentNumber) {
         stuNumber = newStudentNumber;
     }
-    public int alpha(char a) {
-        String[] alphabet = {"a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"};
-        int pos = 0;
-        for(int i = 0; i < alphabet.length; i++) {
-            if(alphabet[i].equals(a)) pos = i-1;
-        }
-        return pos;
-    }
+    
     
 }
