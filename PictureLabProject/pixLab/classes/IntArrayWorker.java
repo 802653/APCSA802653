@@ -64,7 +64,13 @@ public class IntArrayWorker
     }
   }
   
-  public void getCount
+  public void getCount() {
+      
+      
+     //I need to github the instruction file, because i cant find activity 4
+      
+      
+    }
   
   /**
    * print the values in the array in rows and columns
