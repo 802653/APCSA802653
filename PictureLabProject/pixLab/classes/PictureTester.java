@@ -19,10 +19,18 @@ public class PictureTester
     beach.explore();
   }
   
+  public static void testFlipDiagonally()
+  {
+    Picture beach = new Picture("beach.jpg");
+    beach.explore();
+    beach.mirrorD();
+    beach.explore();
+  }
+  
   /** Method to test mirrorVertical */
   public static void testMirrorVertical()
   {
-    Picture caterpillar = new Picture("cate+rpillar.jpg");
+    Picture caterpillar = new Picture("swan.jpg");
     caterpillar.explore();
     caterpillar.mirrorVertical();
     caterpillar.explore();
@@ -34,6 +42,30 @@ public class PictureTester
     Picture temple = new Picture("temple.jpg");
     temple.explore();
     temple.mirrorTemple();
+    temple.explore();
+  }
+  
+  public static void testMirrorVerticalRightToLeft()
+  {
+    Picture temple = new Picture("temple.jpg");
+    temple.explore();
+    temple.mirrorVerticalRightToLeft();
+    temple.explore();
+  }
+  
+  public static void testMirrorHorizontal()
+  {
+    Picture temple = new Picture("blueMotorcycle.jpg");
+    temple.explore();
+    temple.mirrorHorizontal();
+    temple.explore();
+  }
+  
+  public static void testMirrorHorizontalBotToTop()
+  {
+    Picture temple = new Picture("blueMotorcycle.jpg");
+    temple.explore();
+    temple.mirrorHorizontalBotToTop();
     temple.explore();
   }
   
