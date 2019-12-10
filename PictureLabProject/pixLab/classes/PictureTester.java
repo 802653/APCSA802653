@@ -147,7 +147,7 @@ public class PictureTester
   
   public static void testFishScanner()
   {
-    Picture beach = new Picture("water.jpg");
+    Picture beach = new Picture("lala.jpg");
     beach.explore();
     beach.fishScanner();
     beach.explore();

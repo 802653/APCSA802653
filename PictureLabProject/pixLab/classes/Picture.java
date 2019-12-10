@@ -179,6 +179,20 @@ public class Picture extends SimplePicture
     }
   }
   
+  public void fishScanner2()
+  {
+    Pixel[][] pixels = this.getPixels2D();
+    for (Pixel[] rowArray : pixels)
+    {
+      for (Pixel pixelObj : rowArray)
+      {
+        pixelObj.setRed((pixelObj.getRed()-120)*3);
+        pixelObj.setGreen((pixelObj.getGreen()-120)*3);
+        pixelObj.setBlue((pixelObj.getBlue()-120)*3);
+      }
+    }
+  }
+  
   public void grayscale()
   {
     Pixel[][] pixels = this.getPixels2D();
