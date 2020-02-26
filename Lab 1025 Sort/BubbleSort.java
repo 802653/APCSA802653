@@ -175,4 +175,37 @@ public class BubbleSort
         System.out.println("Selection Sort: comparisons:" + comparisons + " swaps:" + swaps + " elapsed: " + TimeUnit.NANOSECONDS.toMillis(durationInNano));
         return list;
     }
+    /*
+     * 
+     */
+    public static int[] mergeSort(int[] a, int l, int r) {
+        if(a.length<2) {return a;}
+        int[] l1 = new int[a.length/2];
+        int[] r1 = new int[a.length - (a.length/2)];
+        
+        for(int i = 0; i < (a.length/2); i++) {
+            l1[i] = a[i];   
+        }
+        for(int i = (a.length/2); i < (a.length); i++) {
+            r1[i - (a.length/2)] = a[i];   
+        }
+        mergeSort(l1,(a.length/2));
+        mergeSort(r1,(a.length/2));
+        merge(a,l1,r1,a.length/2,a.length-a.length/2);
+    }
+    public static void merge(int[] a, int[]l, int[] r, int left, int right) {
+        int i = 0, j = 0, k = 0;
+        while(i < left && j < right) {
+            if(l[i] <= r[j]) {
+                a[k++] = l[i++];
+                
+            }
+            else {
+                a[k++] = r[j++];
+                
+            }
+            while(i < left) { a[k++] = l[i++];}
+            while (j <  right) { a[k++] = r[j++];}
+        }
+    }
 }

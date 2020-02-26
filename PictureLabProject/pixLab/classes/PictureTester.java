@@ -105,14 +105,18 @@ public class PictureTester
     Picture swan = new Picture("swan.jpg");
     swan.edgeDetection(10);
     swan.explore();
-    
-    Picture bm = new Picture("blueMotorcycle.jpg");
-    bm.edgeDetection(20);
-    bm.explore();
-    
-    Picture arch = new Picture("arch.jpg");
-    arch.edgeDetection(50);
-    arch.explore();
+    Picture tech = new Picture("techtip.jpg");
+    tech.edgeDetection(7);
+    tech.explore();
+    Picture cool = new Picture("cool.jpg");
+    cool.edgeDetection(10);
+    cool.explore();
+    Picture beach = new Picture("beach.jpg");
+    beach.edgeDetection(10);
+    beach.explore();
+    Picture abc= new Picture("abc.jpg");
+    abc.edgeDetection(2);
+    abc.explore();
   }
   
   public static void nuke()
