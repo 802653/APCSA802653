@@ -49,6 +49,8 @@ public class times
         
         long[] insertionSortTimes = new long[35];
         
+        long[] mergeSortTimes = new long[35];
+        
         for(int i = 1000; i < 10; i +=30) {
             
             int[] oldList = new int[i*10];
@@ -69,6 +71,12 @@ public class times
             
             insertionSortTimes[i] = insertionSort(list);
            
+            list = oldList;
+            
+            mergeSortTimes[i] = mergeSort(list);
+            
+            
+            
             System.out.println("calculating" + i*10);
         }
         
